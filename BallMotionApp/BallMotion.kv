@@ -1,0 +1,59 @@
+#:kivy 1.10.0
+
+#defining the characteristics of a 'Ball'
+<Ball>:
+    size: 100,100
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<Block>:
+    size: 50,50
+    canvas:
+        Rectangle:
+            pos: 200,200
+            size: 50,10
+        Rectangle:
+            pos: 200,200
+            size:10,50
+        Rectangle:
+            pos: 200,240
+            size:50,10
+        Rectangle:
+            pos: 240,200
+            size:10,50
+
+<Game>:
+#identifying the ball
+    playerBall: myBall
+
+#defines the block on the screen
+    obstructionL: LBlock
+    obstructionR: RBlock
+    obstructionU: UBlock
+    obstructionD: DBlock
+
+#giving 'Game' a 'Ball' item
+    Ball:
+        id: myBall
+        pos: root.center
+
+#sides of the block
+    Block:
+        id: LBlock
+        pos: 200,200
+        size: 20,50
+    Block:
+        id: RBlock
+        pos: 230,200
+        size: 20,50
+    Block:
+        id: UBlock
+        pos: 200,230
+        size: 50, 20
+    Block:
+        id: DBlock
+        pos: 200,200
+        size: 50,20
